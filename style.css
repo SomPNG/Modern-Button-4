@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #121212;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+#btn{
+    height: 3.5rem;
+    width: 10rem;
+    border: 1px solid  rgb(106, 4, 4);
+    color: #ffffffc1;
+    border-radius: 30px;
+    font-family: Impact;
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+    cursor: pointer;
+    position: relative;
+    animation: scali 1.2s ease-in 0s infinite ;
+
+    position: relative;
+}
+@keyframes scali {
+    0%{
+        transform: scale(0.95);
+        filter: drop-shadow(0 0 0 rgb(194, 9, 9));
+        background-color: rgb(90, 7, 7);
+    }
+    50%{
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 1.2rem rgb(194, 9, 9));
+        background-color: rgb(194, 9, 9);
+
+    }
+    100%{
+        transform:scale(0.95);
+        filter: drop-shadow(0 0 0 rgb(194, 9, 9));
+        background-color: rgb(90, 7, 7);
+
+    } 
+}
+#btn:hover{
+    animation: none;
+    transform: scale(1.05);
+    transition: 0.5s;
+    filter: drop-shadow(0 0 1.2rem rgb(194, 9, 9));
+    background-color: rgb(194, 9, 9);
+}
+
+
+#btn:active{
+    transform: translateY(0.2rem);
+    filter: drop-shadow(0 0 2.9rem rgb(194, 9, 9));
+    letter-spacing: 5px;
+}
+
+h1{
+    font-family: Arial;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+#btn::before{
+    content: '📞';
+    filter: drop-shadow(0 0 1.2rem rgb(194, 9, 9));
+    position: absolute;
+    top: calc(100% + 1.2rem);
+    left: 42%;
+    opacity: 0;
+}
+
+
+#btn:hover::before{
+    opacity: 1;
+    transform: scale(1.05);
+    transition: 0.2s;
+}
+
+#btn:hover::before{
+    animation: call 0.6s linear 0s 1;
+}
+#btn:active:before{
+    animation: none;
+}
+@keyframes call {
+    0%{
+        transform: rotate(0deg);
+    }
+    40%{
+        transform: rotate(55deg);
+    }
+    80%{
+        transform: rotate(-15deg);
+    }
+    0%{
+        transform: rotate(0deg);
+    }
+    
+}
+
+@media screen and (max-width:501px) {
+    h1{
+        font-size: 100%;
+    }
+    #btn {
+        width: 8rem; 
+        height: 3rem; 
+        font-size: 1rem;
+        letter-spacing: 2px; 
+    }
+}
